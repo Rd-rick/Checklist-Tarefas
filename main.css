@@ -1,0 +1,238 @@
+body {
+    font-family: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 200px;
+    margin: 0;
+    background-color: #1A1A2E; /* Fundo escuro azul */
+}
+
+.container {
+    text-align: center;
+    background-color: #F0F0F0; /* Fundo claro cinza */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    border: 2px solid #CCCCCC; /* Borda cinza */
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif; /* Fonte para títulos */
+    font-weight: 700; /* Negrito */
+    color: #333333; /* Texto escuro */
+}
+
+p {
+    font-family: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
+    color: #333333; /* Texto escuro */
+    font-size: 1.1em;
+}
+
+#mensagem {
+    display: flexbox;
+    justify-content: center;
+}
+
+.adicionarTarefas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adicionarTarefas label {
+    padding: 7px;
+    align-items: center;
+}
+
+.adicionarTarefas input[type="text"] {
+    height: 10px;
+    width: 30%;
+}
+
+.adicionarTarefas button {
+    display: flex;
+    height: 30px;
+    padding: 8px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    align-items: center;
+}
+
+button {
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+    font-weight: 600; /* Semi-negrito */
+    background-color: #007BFF; /* Azul */
+    color: #FFFFFF; /* Texto claro */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+#apagar-tarefas {
+    display: none;
+    font-size: 12px;
+    padding: 2px 4px;
+    margin-left: 5px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF; /* Fundo branco */
+    color: #333333; /* Texto escuro */
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    align-items: center;
+}
+
+.concluida span {
+    text-decoration: line-through;
+    color: #888; /* Cinza para texto concluído */
+}
+
+.concluida .editar-lista {
+    background-color: #CCCCCC; /* Cinza para botão editar concluído */
+}
+
+.concluida .editar-lista:hover {
+    background-color: #28A745; /* Verde ao passar o mouse */
+}
+
+ul li input[type="checkbox"] {
+    display: flex;
+    appearance: none; /* Remove o estilo padrão do checkbox */
+    max-width: 18px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #333333; /* Borda escura */
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+/* Adicionando o "check" quando marcado */
+ul li input[type="checkbox"]:checked {
+    background-color: transparent;
+    border-color: #28A745; /* Verde */
+}
+
+/* Criando um ícone de check */
+ul li input[type="checkbox"]::before {
+    content: "✔";
+    font-size: 16px;
+    color: #28A745; /* Verde */
+    position: relative;
+    bottom: 3px;
+    left: 1px;
+    display: none;
+}
+
+ul li input[type="checkbox"]:checked::before {
+    display: block;
+}
+
+.remover-lista {
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: auto;
+    margin-bottom: 0.5rem;
+    font-size: 10px;
+    max-width: 100%;
+}
+
+.editar-lista {
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 0.5rem;
+    font-size: 10px;
+    max-width: 100%;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #CCCCCC; /* Borda cinza */
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF; /* Azul ao focar */
+    box-shadow: inset 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+button.remover {
+    background-color: #DC3545; /* Vermelho */
+    color: #FFFFFF; /* Texto claro */
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.6em;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.remover:hover {
+    background-color: #A71D2A; /* Vermelho mais escuro */
+}
+
+button.editar {
+    background-color: #28A745; /* Verde */
+    color: #FFFFFF; /* Texto claro */
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.6em;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.editar:hover {
+    background-color: #1E7E34; /* Verde mais escuro */
+}
+
+.botao_lista {
+    background-color: #DC3545; /* Vermelho */
+}
+
+.botao_lista:hover {
+    background-color: #A71D2A; /* Vermelho mais escuro */
+    color: #FFFFFF; /* Texto claro */
+}
