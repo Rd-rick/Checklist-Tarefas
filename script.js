@@ -2,7 +2,7 @@ let tarefas = []
 
 const listasTarefas = document.getElementById("listaTarefas");
 
-document.getElementById("novaTarefa").addEventListener("keydown", function (event) {
+$('novaTarefa').addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         adicionarTarefa();
     }
@@ -108,13 +108,13 @@ function renderizarTarefas() {
             editarBotao.onclick = () => editarTarefa(i)
         
             // Adicionando checkbox e texto da tarefa na li
-            tarefaNova.appendChild(criandoCheckbox);
-            tarefaNova.appendChild(textoTarefa);
-            tarefaNova.appendChild(apagarBotao);
-            tarefaNova.appendChild(editarBotao)
+            $(criandoCheckbox).appendTo(tarefaNova);
+            $(textoTarefa).appendTo(tarefaNova);
+            $(apagarBotao).appendTo(tarefaNova);
+            $(editarBotao).appendTo(tarefaNova)
         
             // Adicionando a li ao elemento pai ul
-            listasTarefas.appendChild(tarefaNova);
+            $(tarefaNova).appendTo(listasTarefas)
     }
 }
 
