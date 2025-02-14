@@ -2,7 +2,7 @@ let tarefas = []
 
 const listasTarefas = document.getElementById("listaTarefas");
 
-$('novaTarefa').addEventListener("keydown", function (event) {
+$('#novaTarefa').on("keydown", function (event) {
     if (event.key === "Enter") {
         adicionarTarefa();
     }
