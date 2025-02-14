@@ -10,22 +10,21 @@ $('#novaTarefa').on("keydown", function (event) {
 
 function adicionarTarefa() {
 
-    // Mensagens
+
     let mensagemSucesso = "Tarefa adicionada com sucesso!";
     let mensagemErro = "Escreva o nome da tarefa";
     const mensagem = document.getElementById("mensagem");
 
-    // Pegando o valor do input e adicionando a uma variável
+
     const inputTarefa = document.getElementById("novaTarefa");
     let novaTarefa = inputTarefa.value.trim();
 
     if (novaTarefa === "") {
-        mensagem.style.color = "#8B0000"; // Cor vermelha para erro
+        mensagem.style.color = "#8B0000"; 
         mensagem.textContent = mensagemErro;
-        return; // Sai da função se o campo estiver vazio
+        return; 
     }
 
-    // Mensagem de sucesso
     mensagem.style.color = "green";
     mensagem.textContent = mensagemSucesso;
 
@@ -54,13 +53,11 @@ function renderizarTarefas() {
 
     apagarTudo()
 
-        // Pegando o elemento UL e criando uma LI
         listasTarefas.innerHTML = ""
 
         for (let i = 0; i < tarefas.length; i++) {
             let tarefaNova = document.createElement("li");
             
-            // Criando um checkbox
             const criandoCheckbox = document.createElement("input");
             criandoCheckbox.type = "checkbox";
             
@@ -94,26 +91,21 @@ function renderizarTarefas() {
                 }
             })
 
-            //criando um botão apagar
             const apagarBotao = document.createElement("button");
             apagarBotao.className = "remover-lista"
             apagarBotao.textContent = "Remover"
             apagarBotao.onclick = () => removerTarefa(i)
-
-            //botãi editar
 
             const editarBotao = document.createElement("button");
             editarBotao.className = "editar-lista"
             editarBotao.textContent = "Editar"
             editarBotao.onclick = () => editarTarefa(i)
         
-            // Adicionando checkbox e texto da tarefa na li
             $(criandoCheckbox).appendTo(tarefaNova);
             $(textoTarefa).appendTo(tarefaNova);
             $(apagarBotao).appendTo(tarefaNova);
             $(editarBotao).appendTo(tarefaNova)
         
-            // Adicionando a li ao elemento pai ul
             $(tarefaNova).appendTo(listasTarefas)
     }
 }
