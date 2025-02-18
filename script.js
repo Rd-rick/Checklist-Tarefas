@@ -136,3 +136,20 @@ function remover() {
     renderizarTarefas()
     mensagem.style.display = "none"
 }
+
+$(document).ready(function() {
+
+    function ajustarBotao() {
+        if ($(window).width() <= 767) {
+            $('.adicionarTarefas .botao-1').html("Adicionar");
+        } else {
+            $('.adicionarTarefas .botao-1').html("+");
+        }
+    }
+
+    ajustarBotao();
+
+    $(window).resize(function () {
+        ajustarBotao();
+    });
+})
